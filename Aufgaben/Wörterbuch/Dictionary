@@ -1,0 +1,36 @@
+# Schritt 1: Erstelle ein leeres Wörterbuch für Filmbewertungen.
+film_bewertungen = {}
+
+# Schritt 2: Füge mindestens fünf Filmtitel und ihre Bewertungen in das Wörterbuch ein.
+film_bewertungen["Film1"] = 8
+film_bewertungen["Film2"] = 7
+film_bewertungen["Film3"] = 9
+film_bewertungen["Film4"] = 6
+film_bewertungen["Film5"] = 8
+
+# Schritt 3: Schreibe eine Funktion durchschnittliche_bewertung(wörterbuch).
+def durchschnittliche_bewertung(wörterbuch):
+    bewertungen = wörterbuch.values()
+    durchschnitt = sum(bewertungen) / len(bewertungen)
+    return durchschnitt
+
+# Schritt 4: Schreibe eine Funktion höchste_bewertung(wörterbuch).
+def höchste_bewertung(wörterbuch):
+    höchste_bewertung_film = max(wörterbuch, key=wörterbuch.get)
+    return höchste_bewertung_film
+
+# Schritt 5: Schreibe eine Funktion filme_ab_6(wörterbuch).
+def filme_ab_6(wörterbuch):
+    gute_filme = [film for film, bewertung in wörterbuch.items() if bewertung >= 6]
+    return gute_filme
+
+# Schritt 6: Füge einen weiteren Film mit Bewertung hinzu und aktualisiere das Wörterbuch.
+film_bewertungen["Film6"] = 9
+
+# Schritt 7: Gib das Wörterbuch aus, um sicherzustellen, dass die Bewertungen aktualisiert wurden.
+print("Aktualisiertes Wörterbuch:", film_bewertungen)
+
+# Schritt 8: Verwende die oben definierten Funktionen, um die gewünschten Informationen auszugeben.
+print("Durchschnittliche Bewertung aller Filme:", durchschnittliche_bewertung(film_bewertungen))
+print("Film mit der höchsten Bewertung:", höchste_bewertung(film_bewertungen))
+print("Filme mit einer Bewertung von 6 oder höher:", filme_ab_6(film_bewertungen))

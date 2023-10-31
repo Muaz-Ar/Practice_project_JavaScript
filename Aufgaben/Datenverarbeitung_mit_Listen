@@ -1,0 +1,23 @@
+produkte = [
+    ("Laptop", 899.99, 4.6, True),
+    ("Smartphone", 549.99, 4.2, True),
+    ("Tablet", 299.99, 3.9, False),
+    ("Kopfhörer", 149.99, 4.8, True),
+    ("Maus", 19.99, 4.1, True),
+]
+
+# Aufgabe 1: 
+verfuegbare_produkte = [produkt[0] for produkt in produkte if produkt[3]]
+print("Verfügbare Produkte:", verfuegbare_produkte)
+
+# Aufgabe 2: 
+gesuchte_produkte = [produkt[0] for produkt in produkte if produkt[1] < 50 and produkt[2] >= 4]
+print("Gesuchte Produkte:", gesuchte_produkte)
+
+# Aufgabe 3: 
+durchschnittspreis = sum(produkt[1] for produkt in produkte) / len(produkte)
+print("Durchschnittspreis aller Produkte:", durchschnittspreis)
+
+# Aufgabe 4: 
+teuerstes_produkt = max(produkte, key=lambda produkt: produkt[1])
+print("Teuerstes Produkt:", teuerstes_produkt[0])
