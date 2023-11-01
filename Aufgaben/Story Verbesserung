@@ -1,0 +1,86 @@
+import random
+
+# Listen von Wörtern und Phrasen in verschiedenen Kategorien
+einführung = [
+    "In einer fernen Galaxie",
+    "Einst, an einem abgelegenen Ort",
+    "Im tiefsten Dschungel",
+    "Auf einem fernen Planeten",
+    "Vor langer Zeit in einem Königreich"
+]
+
+subekte = [
+    "Ein grüner Dinosaurier",
+    "Ein frecher Pinguin",
+    "Ein furchtloser Astronaut",
+    "Eine flauschige Katze",
+    "Ein tanzender Roboter"
+]
+
+verben = [
+    "entdeckte",
+    "erkundete",
+    "besiegte",
+    "rettete",
+    "verwandelte sich in"
+]
+
+handlungen = [
+    "einen verlorenen Schatz",
+    "eine geheime Formel",
+    "einen gefährlichen Drachen",
+    "einen magischen Ring",
+    "einen verborgenen Schatz"
+]
+
+höhepunkte = [
+    "und wurde zum Helden",
+    "und schloss Freundschaft mit einem Einhorn",
+    "und gewann die Herzen aller",
+    "und fand die wahre Liebe",
+    "und besiegte die Dunkelheit"
+]
+
+ende = [
+    "und lebte glücklich bis ans Ende seiner Tage.",
+    "und kehrte als siegreicher Champion zurück.",
+    "und wurde zum König des Königreichs.",
+    "und fand seinen wahren Zweck im Leben.",
+    "und verbreitete Glück und Freude überall."
+]
+
+# Begrüßung
+print("Willkommen zum Zufallsgeschichten-Generator!")
+
+# Hauptschleife
+while True:
+    try:
+        # Generiere die Einführung
+        intro = random.choice(einführung)
+
+        # Generiere die Hauptfigur und die Handlung
+        hauptfigur = random.choice(subekte)
+        handlung = random.choice(verben)
+        handlungsauswahl = random.choice(handlungen)
+
+        # Generiere den Höhepunkt
+        höhepunkt = random.choice(höhepunkte)
+
+        # Generiere das Ende
+        story_ende = random.choice(ende)
+
+        # Generiere die Geschichte
+        geschichte = f"{intro}, {hauptfigur} {handlung} {handlungsauswahl} {höhepunkt} {story_ende}"
+
+        # Ausgabe der generierten Geschichte
+        print("\nHier ist deine zufällige Geschichte:")
+        print(geschichte)
+        
+        # Grußformel und Option zur Generierung weiterer Geschichten
+        weitere_generierung = input("\nMöchten Sie eine weitere Geschichte generieren? (Ja/Nein): ").lower()
+        if weitere_generierung != "ja":
+            print("Vielen Dank und auf Wiedersehen!")
+            break
+
+    except ValueError:
+        print("Ungültige Eingabe. Bitte geben Sie eine ganze Zahl ein.")
